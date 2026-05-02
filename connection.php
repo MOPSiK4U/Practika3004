@@ -2,7 +2,7 @@
 $host = 'localhost';
 $database = 'market';
 $user = 'root';
-$password = ''; // в OpenServer чаще всего пустой
+$password = '';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $user, $password);

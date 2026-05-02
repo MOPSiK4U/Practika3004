@@ -1,6 +1,13 @@
 <?php
 $host = 'localhost';
-$database = 'market_ispp31';
+$database = 'market';
 $user = 'root';
-$password = 'root';
+$password = ''; // в OpenServer чаще всего пустой
+
+try {
+    $pdo = new PDO("mysql:host=$host;dbname=$database;charset=utf8", $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch(PDOException $e) {
+    die("Ошибка подключения: " . $e->getMessage());
+}
 ?>
